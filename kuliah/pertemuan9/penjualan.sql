@@ -1,0 +1,105 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jun 25, 2020 at 11:01 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.5
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `penjualan`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `ID` varchar(5) NOT NULL,
+  `NAMA_BARANG` varchar(20) NOT NULL,
+  `JENIS_BARANG` varchar(20) NOT NULL,
+  `HARGA_BELI` int(11) NOT NULL,
+  `HARGA_JUAL` int(11) NOT NULL,
+  `STOK` int(11) NOT NULL,
+  `PRODUKSI` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `barang`
+--
+
+INSERT INTO `barang` (`ID`, `NAMA_BARANG`, `JENIS_BARANG`, `HARGA_BELI`, `HARGA_JUAL`, `STOK`, `PRODUKSI`) VALUES
+('B02', 'DAIA', 'DETERGEN', 9000, 10000, 20, 0),
+('B03', 'LIFEBUOY', 'SABUN MANDI', 2000, 4000, 30, 0),
+('B04', 'LIFEBUOY', 'SHAMPOO', 12000, 14000, 20, 0),
+('B05', 'LUX', 'SABUN MANDI', 2000, 3000, 12, 0),
+('B06', 'DETTOL', 'SABUN MANDI', 3000, 4000, 15, 0),
+('B07', 'CITRA', 'BODY LOTION', 12000, 15000, 16, 0),
+('B08', 'CITRA', 'SABUN MANDI', 2000, 2500, 25, 0),
+('B09', 'PANTENE', 'SHAMPOO', 15000, 16000, 30, 0),
+('B10', 'PEPSODENT', 'PASTA GIGI', 10000, 11000, 19, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `penjualan`
+--
+
+CREATE TABLE `penjualan` (
+  `kode` int(11) NOT NULL,
+  `nama` varchar(20) DEFAULT NULL,
+  `alamat` varchar(30) DEFAULT NULL,
+  `kota` varchar(20) DEFAULT NULL,
+  `notelp` varchar(12) DEFAULT NULL,
+  `tipe` varchar(8) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `penjualan`
+--
+
+INSERT INTO `penjualan` (`kode`, `nama`, `alamat`, `kota`, `notelp`, `tipe`) VALUES
+(123, 'PASTRIA SANDRA', 'JL.KLEDOKAN NO. 21', 'JOMBANG', '08123456789', 'GOLD'),
+(124, 'IHSAN YUSUF', 'JL. KAPAS NO. 3', 'BEKASI', '08123456788', 'PREMIUM'),
+(125, 'RIO DEWANTO', 'JL. MERDEKA NO. 14', 'JAKARTA', '08123456787', 'PREMIUM'),
+(126, 'SANDRA DEWI', 'JL. PELANGI NO. 2', 'JAKARTA', '08123456785', 'PREMIUM'),
+(127, 'DEWA PUTRA', 'JL. MACAN NO. 34', 'SURABAYA', '081223456782', 'GOLD'),
+(128, 'PUTRA SANTOSA', 'JL. KELINCI NO. 23', 'SURABAYA', '081234521321', 'GOLD'),
+(129, 'ELYN GAURA', 'JL. MELATI NO. 12', 'YOGYAKARTA', '081243213426', 'ECONOMY'),
+(130, 'LETISIA RURON', 'JL. MERPATI NO. 26', 'YOGYAKARTA', '081352132421', 'ECONOMY'),
+(131, 'KARTINI', 'JL. DANAU TOBA NO. 12', 'SEMARANG', '081253125412', 'PREMIUM'),
+(132, 'PUTRI DIANA', 'JL. DANAU KERINCI NO. 13', 'BEKASI', '081354231241', 'GOLD'),
+(133, 'JULIA RAHMAN', 'JL. ELANG NO. 32', 'JAKARTA', '081342512341', 'ECONOMY'),
+(134, 'PUTRA PERDANA', 'JL. TULIP NO. 12', 'JOMBANG', '081321312532', 'PREMIUM'),
+(135, 'PRANANDA GITA', 'JL. SEDAP MALAM NO. 27', 'SEMARANG', '081354217892', 'ECONOMY'),
+(136, 'SATRIA ARDI', 'JL. SRIWIJAYA NO. 3', 'MATARAM', '081353678321', 'GOLD'),
+(137, 'ANANDA DILA', 'JL. KAWI NO. 12', 'SURABAYA', '081342135673', 'GOLD'),
+(138, 'ALDILA BAGUS', 'JL. AFFANDI NO. 23', 'YOGYAKARTA', '081254678211', 'PREMIUM');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`ID`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
